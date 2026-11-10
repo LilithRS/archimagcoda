@@ -1,0 +1,80 @@
+/* ==========================================================
+   Архимаг кода · design tokens
+   Справочник для Figma / кодовой базы.
+   index.html самодостаточен и не подключает этот файл.
+   ========================================================== */
+
+:root{
+  /* --- surfaces --- */
+  --bg:#04091c;
+  --bg-2:#07142f;
+  --surface:rgba(10,24,54,.72);
+  --surface-solid:#0a1a3a;
+  --surface-2:#0e2148;
+  --line:rgba(122,178,255,.16);
+  --line-2:rgba(122,178,255,.30);
+
+  /* --- text --- */
+  --text:#eaf3ff;
+  --muted:#9db6da;
+  --dim:#6d88b3;
+
+  /* --- brand --- */
+  --blue:#2f6bff;
+  --cyan:#49d6ff;
+  --violet:#8b6cff;
+  --gold:#ffcf87;
+  --mint:#5eead4;
+  --grad:linear-gradient(110deg,#49d6ff 0%,#2f6bff 52%,#8b6cff 100%);
+  --grad-soft:linear-gradient(110deg,rgba(73,214,255,.14),rgba(139,108,255,.12));
+
+  /* --- typography --- */
+  --font:Inter,"SF Pro Display",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+  --fs-display:clamp(46px,5.5vw,78px);
+  --fs-h2:clamp(31px,3.7vw,50px);
+  --fs-body:14px;
+  --fs-ui:12.5px;
+  --fs-micro:10px;
+  --fw-black:820;
+  --fw-bold:750;
+  --tracking-display:-.055em;
+  --tracking-head:-.048em;
+  --lh-body:1.55;
+
+  /* --- geometry & motion --- */
+  --space:8px;
+  --r-sm:9px;
+  --r-md:11px;
+  --r-lg:15px;
+  --r-xl:20px;
+  --r-band:28px;
+  --wrap:1220px;
+  --topbar-h:68px;
+  --shadow:0 26px 70px rgba(0,4,18,.55);
+  --glow:0 0 32px rgba(73,214,255,.28);
+  --glow-brand:0 10px 30px rgba(47,107,255,.32);
+  --dur:220ms;
+  --dur-slow:450ms;
+  --ease:cubic-bezier(.2,.7,.3,1);
+
+  /* --- component recipes --- */
+  --btn-primary-bg:var(--grad);
+  --btn-primary-fg:#03122e;
+  --card-bg:linear-gradient(155deg,rgba(16,38,80,.72),rgba(6,16,38,.75));
+  --console-bg:rgba(6,17,42,.80);
+  --table-head:#0b1d40;
+}
+
+/* Примеры --------------------------------------------------------------
+.rune-card{
+  border:1px solid var(--line);border-radius:var(--r-xl);
+  background:var(--card-bg);backdrop-filter:blur(14px);
+  box-shadow:var(--shadow);transition:transform var(--dur) var(--ease);
+}
+.rune-card:hover{transform:translateY(-6px);border-color:var(--cyan);box-shadow:var(--glow)}
+.btn-primary{background:var(--btn-primary-bg);color:var(--btn-primary-fg);
+  padding:14px 22px;border-radius:12px;font-weight:var(--fw-bold);
+  box-shadow:var(--glow-brand)}
+.code{font-family:var(--mono);line-height:1.75}
+------------------------------------------------------------------------ */

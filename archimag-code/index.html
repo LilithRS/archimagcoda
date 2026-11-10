@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Архимаг кода — школа программирования для детей</title>
+<meta name="description" content="Академия цифровой магии: учим детей программировать через проекты, игры и настоящие заклинания кода.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-view="site">
+
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#49d6ff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6.5v11L12 22l8-4.5v-11z"/><path d="m9.5 9-2.5 3 2.5 3M14.5 9l2.5 3-2.5 3M13 7.5l-2 9"/></svg></div>
+    <div><div class="brand-name">Архимаг кода</div><div class="brand-sub">академия цифровой магии</div></div>
+  </div>
+  <nav class="nav" id="siteNav">
+    <a href="#courses">Направления</a><a href="#lesson">Как проходим</a><a href="#codex">Кодекс</a><a href="#reviews">Отзывы</a>
+  </nav>
+  <div class="spacer"></div>
+  <div class="view-switch" id="viewSwitch"><button data-view="site" class="active">Сайт</button><button data-view="database">База данных</button></div>
+  <button class="btn btn-primary btn-sm" data-open="lead">Пробный урок ✦</button>
+</header>
+
+<main>
+<!-- ==================== SITE ==================== -->
+<div class="view site active" id="view-site">
+
+  <section class="hero">
+    <div class="hero-bg"></div><div class="hero-shade"></div>
+    <svg class="hero-runes" viewBox="0 0 400 400" fill="none" stroke="#49d6ff" stroke-width="1">
+      <circle cx="200" cy="200" r="185" stroke-dasharray="3 12" opacity=".7"/>
+      <circle cx="200" cy="200" r="152" opacity=".35"/>
+      <circle cx="200" cy="200" r="118" stroke-dasharray="22 8" opacity=".5"/>
+      <path d="M200 15 385 200 200 385 15 200Z" opacity=".25"/>
+      <text x="200" y="30" fill="#49d6ff" font-size="14" font-family="monospace" text-anchor="middle" stroke="none">✦</text>
+      <text x="200" y="378" fill="#49d6ff" font-size="14" font-family="monospace" text-anchor="middle" stroke="none">{ }</text>
+      <text x="28" y="205" fill="#49d6ff" font-size="13" font-family="monospace" stroke="none">&lt; / &gt;</text>
+      <text x="365" y="205" fill="#49d6ff" font-size="13" font-family="monospace" stroke="none">0101</text>
+    </svg>
+    <div class="wrap hero-inner">
+      <div class="hero-copy">
+        <span class="kicker">Школа программирования 7–16 лет</span>
+        <h1>Здесь код становится <span class="grad-text">заклинанием</span></h1>
+        <p class="hero-lead">Не уроки «по учебнику», а мастерская, где ребёнок пишет первые строчки кода и сразу видит магию: оживший кот, игра с драконом, собственный сайт и портал в мир алгоритмов.</p>
+        <div class="hero-cta">
+          <button class="btn btn-primary" data-open="lead">Записаться на пробный урок</button>
+          <button class="btn btn-ghost" data-scroll="#courses">Смотреть направления</button>
+        </div>
+        <div class="hero-stats">
+          <div><b data-count="1200">0</b><span>юных архимагов</span></div>
+          <div><b data-count="38">0</b><span>наставников-практиков</span></div>
+          <div><b data-count="94" data-suffix="%">0</b><span>продолжают после курса</span></div>
+        </div>
+      </div>
+
+      <div class="console" id="spellConsole">
+        <div class="console-head"><div class="dots"><i></i><i></i><i></i></div><span class="console-file" id="spellFile">spellbook.py</span><span class="mana"><i></i>mana 100%</span></div>
+        <div class="console-tabs" id="spellTabs"></div>
+        <pre class="code" id="spellCode"></pre>
+        <div class="console-stage"><canvas id="spellCanvas"></canvas></div>
+        <div class="console-output"><span class="mark">✦</span><span id="spellOutput">Нажми «Произнести», чтобы увидеть магию</span></div>
+        <div class="console-foot"><button class="run-btn" id="runSpell">▶ Произнести заклинание</button><button class="mini-btn" id="shuffleSpell">↻</button></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ticker"><div class="ticker-track" id="tickerTrack"></div></div>
+
+  <section class="section">
+    <div class="wrap"><div class="stats-strip">
+      <div class="stat-tile"><b data-count="6">0</b><span>магических направлений, от Scratch до C++</span></div>
+      <div class="stat-tile"><b data-count="8" data-suffix=" чел.">0</b><span>максимум учеников в гильдии</span></div>
+      <div class="stat-tile"><b data-count="72" data-suffix="%">0</b><span>занятия — практика, а не теория</span></div>
+      <div class="stat-tile"><b data-count="4.9" data-decimal="1">0</b><span>средняя оценка от родителей ★</span></div>
+    </div></div>
+  </section>
+
+  <section class="section alt" id="courses">
+    <div class="wrap">
+      <div class="sec-head"><div class="eyebrow">Гильдии и дисциплины</div><h2>Выбери свой путь в академии</h2><p>Каждое направление — это свой язык магии и свой проект в портфолио. Подберём гильдию по возрасту и опыту ребёнка.</p></div>
+      <div class="filter-row" id="ageFilter">
+        <button class="filter-chip active" data-age="all">Все возрасты</button>
+        <button class="filter-chip" data-age="7-9">7–9 лет</button>
+        <button class="filter-chip" data-age="10-12">10–12 лет</button>
+        <button class="filter-chip" data-age="13-16">13–16 лет</button>
+        <span class="filter-note" id="courseCount">6 направлений</span>
+      </div>
+      <div class="course-grid" id="courseGrid"></div>
+    </div>
+  </section>
+
+  <section class="section" id="lesson">
+    <div class="wrap">
+      <div class="sec-head"><div class="eyebrow">Один урок изнутри</div><h2>От «а что, если…» до работающего проекта</h2><p>90 минут, за которые ребёнок успевает придумать, собрать, сломать, починить и показать результат.</p></div>
+      <div class="lesson-layout">
+        <div class="lesson-steps" id="lessonSteps"></div>
+        <div class="lesson-panel" id="lessonPanel"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="codex">
+    <div class="wrap">
+      <div class="codex" id="codexBox">
+        <div>
+          <div class="eyebrow">Кодекс архимага · мини-задание</div>
+          <h2>Собери первое заклинание</h2>
+          <p>Программа — это просто команды в правильном порядке. Нажми строки кода по очереди, чтобы открыть портал. Ошибся? Ничего страшного: у настоящих магов тоже бывает <span style="font-family:var(--mono);color:var(--cyan)">SyntaxError</span>.</p>
+          <div class="codex-status" id="codexStatus">✦ Порядок пока не найден</div>
+          <div class="codex-progress" id="codexProgress"></div>
+        </div>
+        <div>
+          <div class="codex-lines" id="codexLines"></div>
+          <div class="codex-foot"><button class="btn btn-ghost btn-sm" id="codexShuffle">↻ Перемешать строки</button></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="reviews">
+    <div class="wrap">
+      <div class="reviews-head">
+        <div class="sec-head" style="margin-bottom:0">
+          <div class="eyebrow">Живые голоса академии</div>
+          <h2>Что говорят ученики и родители</h2>
+          <p>Отзывы приходят из базы данных сайта: новый отзыв появляется в ленте сам, без перезагрузки страницы.</p>
+        </div>
+        <span class="live-badge"><i></i>LIVE · обновляется автоматически</span>
+      </div>
+      <div class="reviews-toolbar">
+        <select id="reviewFilter"><option value="all">Все направления</option></select>
+        <select id="reviewSort"><option value="new">Сначала новые</option><option value="rating">По оценке</option><option value="likes">По лайкам</option></select>
+        <span class="toolbar-count" id="reviewsCount"></span>
+        <button class="btn btn-primary btn-sm" data-open="review">✦ Оставить отзыв</button>
+      </div>
+      <div class="reviews-grid" id="reviewsGrid"></div>
+      <div class="reviews-empty" id="reviewsEmpty" style="display:none">По этому фильтру отзывов пока нет — стань первым ✦</div>
+      <div style="text-align:center;margin-top:18px"><button class="btn btn-ghost btn-sm" id="showMore">Показать все отзывы ↓</button></div>
+      <div class="reviews-foot"><p id="storageNote"></p><div style="display:flex;gap:9px;align-items:center;flex-wrap:wrap"><span class="mode-badge" id="modeBadge">Определяем источник…</span><button class="btn btn-ghost btn-sm" data-view="database">Открыть базу данных →</button></div></div>
+    </div>
+  </section>
+
+  <section class="cta-section"><div class="wrap"><div class="cta-band">
+    <div class="eyebrow">Первый шаг бесплатный</div>
+    <h2>Пусть ребёнок попробует <span class="grad-text">свою первую магию</span></h2>
+    <p>Пробный урок — 60 минут в мини-группе. Познакомимся, соберём маленький проект и честно скажем, какое направление подойдёт именно вам.</p>
+    <button class="btn btn-primary" data-open="lead">Записаться на пробный урок ✦</button>
+    <div class="cta-points"><span>Без оплаты и обязательств</span><span>Группы от 8 человек</span><span>Онлайн и в Тюмени</span></div>
+  </div></div></section>
+
+  <footer class="footer"><div class="wrap">
+    <div class="footer-inner">
+      <div><div class="brand"><div class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#49d6ff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6.5v11L12 22l8-4.5v-11z"/><path d="m9.5 9-2.5 3 2.5 3M14.5 9l2.5 3-2.5 3M13 7.5l-2 9"/></svg></div><div><div class="brand-name">Архимаг кода</div><div class="brand-sub">академия цифровой магии</div></div></div><p>Учим детей думать алгоритмами и превращать идеи в работающие проекты — с первого занятия.</p></div>
+      <div class="footer-links"><a href="#courses" data-scroll="#courses">Направления</a><a href="#lesson" data-scroll="#lesson">Как проходим</a><a href="#reviews" data-scroll="#reviews">Отзывы</a><a href="#" data-open="lead">Пробный урок</a><a href="#" data-view="database">База данных</a></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Архимаг кода · концепт сайта</span><span>Сделано с помощью кода и небольшого количества магии ✦</span></div>
+  </div></footer>
+</div>
+
+<!-- ==================== DATABASE ==================== -->
+<div class="view db-view" id="view-database"><div class="wrap">
+  <div class="db-head">
+    <div><div class="eyebrow">Админ-панель · живые данные</div><h1>База отзывов академии</h1><p id="dbEngineNote">Подключение…</p></div>
+    <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap"><span class="db-status" id="dbStatus"><i></i>подключение…</span><div class="db-actions"><button class="btn btn-ghost btn-sm" id="dbRefresh">↻ Обновить</button><button class="btn btn-ghost btn-sm" id="dbExport">↓ Экспорт CSV</button><button class="btn btn-ghost btn-sm" id="adminAuthBtn" style="display:none">Выйти</button><button class="btn btn-primary btn-sm" data-view="site">← На сайт</button></div></div>
+  </div>
+  <div class="db-stats" id="dbStats"></div>
+  <div class="db-panel">
+    <div class="db-tabs" id="dbTabs"><button data-db="reviews" class="active">Отзывы</button><button data-db="leads">Заявки на урок</button><button data-db="schema">Схема и API</button></div>
+    <div id="dbContent"></div>
+  </div>
+</div></div>
+</main>
+
+<!-- ==================== MODALS ==================== -->
+<div class="modal-backdrop" id="reviewModal"><div class="modal">
+  <div class="modal-head"><div><h3>Оставить отзыв ✦</h3><p>Расскажите, что понравилось ребёнку. Отзыв появится в ленте сразу.</p></div><button class="close-x" data-close><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
+  <form id="reviewForm" novalidate>
+    <div class="form-error" id="reviewError"></div>
+    <div class="form-grid">
+      <div class="field"><label>Ваше имя *</label><input name="author" maxlength="60" placeholder="Например: Анна М."></div>
+      <div class="field"><label>Кто вы *</label><select name="role"><option value="родитель">Родитель</option><option value="ученик">Ученик / ученица</option><option value="выпускник">Выпускник</option><option value="наставник">Наставник</option></select></div>
+      <div class="field full"><label>Направление *</label><select name="course" id="reviewCourse"></select></div>
+      <div class="field full"><label>Оценка *</label><div class="stars-input" id="starsInput"><button type="button" data-star="1">★</button><button type="button" data-star="2">★</button><button type="button" data-star="3">★</button><button type="button" data-star="4">★</button><button type="button" data-star="5">★</button></div></div>
+      <div class="field full"><label>Отзыв * <span class="hint" style="text-transform:none;letter-spacing:0">от 10 до 600 символов</span></label><textarea name="text" maxlength="600" placeholder="Что запомнилось ребёнку? Какой проект он собрал?"></textarea></div>
+    </div>
+    <label class="checkbox-row"><input type="checkbox" name="consent"> Согласен(на) на публикацию отзыва на сайте</label>
+    <div class="honeypot"><label>Сайт<input name="website" tabindex="-1" autocomplete="off"></label></div>
+    <div class="modal-actions"><button type="button" class="btn btn-ghost" data-close>Отмена</button><button type="submit" class="btn btn-primary">Опубликовать отзыв ✦</button></div>
+  </form>
+</div></div>
+
+<div class="modal-backdrop" id="leadModal"><div class="modal">
+  <div class="modal-head"><div><h3>Пробный урок ✦</h3><p>Оставьте контакты — наставник подберёт гильдию и свяжется с вами.</p></div><button class="close-x" data-close><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
+  <form id="leadForm" novalidate>
+    <div class="form-error" id="leadError"></div>
+    <div class="form-grid">
+      <div class="field"><label>Имя родителя *</label><input name="parent" maxlength="60" placeholder="Мария"></div>
+      <div class="field"><label>Имя ребёнка *</label><input name="child" maxlength="60" placeholder="Тимур"></div>
+      <div class="field"><label>Возраст ребёнка *</label><input name="age" type="number" min="6" max="18" placeholder="10"></div>
+      <div class="field"><label>Направление *</label><select name="course" id="leadCourse"></select></div>
+      <div class="field full"><label>E-mail или телефон *</label><input name="contact" maxlength="100" placeholder="name@example.com или +7 900 000-00-00"></div>
+    </div>
+    <label class="checkbox-row"><input type="checkbox" name="consent" checked> Согласен(на) на обработку контактов для связи</label>
+    <div class="honeypot"><label>Сайт<input name="website" tabindex="-1" autocomplete="off"></label></div>
+    <div class="modal-actions"><button type="button" class="btn btn-ghost" data-close>Отмена</button><button type="submit" class="btn btn-primary">Отправить заявку ✦</button></div>
+  </form>
+</div></div>
+
+<div class="modal-backdrop" id="courseModal"><div class="modal wide">
+  <div class="modal-head"><div><h3 id="courseModalTitle"></h3><p id="courseModalSub"></p></div><button class="close-x" data-close><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
+  <div class="course-detail-tags" id="courseModalTags"></div>
+  <p id="courseModalDesc" style="font-size:13px;color:var(--muted);line-height:1.7"></p>
+  <ul class="syllabus" id="courseModalSyllabus"></ul>
+  <div class="modal-actions"><button class="btn btn-ghost" data-close>Закрыть</button><button class="btn btn-primary" id="courseApply">Записаться на это направление ✦</button></div>
+</div></div>
+
+<div class="toast" id="toast"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
